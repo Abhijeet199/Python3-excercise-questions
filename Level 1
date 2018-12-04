@@ -1,0 +1,177 @@
+#----------------------------------------#
+Question 1
+#----------------------------------------#
+
+Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5,
+between 2000 and 3200 (both included).
+The numbers obtained should be printed in a comma-separated sequence on a single line.
+
+Hints: 
+Consider use range(#begin, #end) method
+
+Solution:
+lst = []
+for n in range(2000, 3201):
+    if n % 7 == 0 and n % 5 != 0:
+        lst.append(str(n))
+print(', '.join(lst))
+
+#----------------------------------------#
+Question 2
+#----------------------------------------#
+
+Write a program which can compute the factorial of a given numbers.
+Suppose the following input is supplied to the program:
+8
+Then, the output should be:
+40320
+
+Hints:
+In case of input data being supplied to the question, it should be assumed to be a console input.
+
+Solution:
+#with for loop:
+n = int(input())
+f = 1
+for i in range(2, n+1):
+    f *= i
+print(f)
+
+#With recursion:
+def fact(n):
+    if n == 1:
+        return 1
+    return n * fact(n-1)
+
+
+num = int(input())
+print(fact(num))
+
+#----------------------------------------#
+Question 3
+#----------------------------------------#
+
+With a given integral number n, write a program to generate a dictionary that contains (i, i*i) such that is an integral number between 1 and n (both included). and then the program should print the dictionary.
+Suppose the following input is supplied to the program:
+8
+Then, the output should be:
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}
+
+Hints:
+In case of input data being supplied to the question, it should be assumed to be a console input.
+Consider use dict()
+
+Solution:
+n = int(input())
+d = {}
+for i in range(1, n+1):
+    d[i] = i*i
+print(d)
+
+#----------------------------------------#
+Question 4
+#----------------------------------------#
+
+Write a program which accepts a sequence of comma-separated numbers from console and generate a list and a tuple which contains every number.
+Suppose the following input is supplied to the program:
+34,67,55,33,12,98
+Then, the output should be:
+['34', '67', '55', '33', '12', '98']
+('34', '67', '55', '33', '12', '98')
+
+Hints:
+In case of input data being supplied to the question, it should be assumed to be a console input.
+tuple() method can convert list to tuple
+
+Solution:
+lst = input().split(',')
+tup = tuple(lst)
+print(lst)
+print(tup)
+
+#----------------------------------------#
+Question 5
+#----------------------------------------#
+
+Define a class which has at least two methods:
+get_string: to get a string from console input
+print_string: to print the string in upper case.
+
+Hints:
+Use __init__ method to construct some parameters
+
+Solution:
+class InputOutputString:
+    def __init__(self):
+        self.string = ''
+
+    def get_string(self):
+        self.string = input()
+
+    def print_string(self):
+        print(self.string)
+
+
+obj = InputOutputString()
+obj.get_string()
+obj.print_string()
+
+#----------------------------------------#
+Question 6
+#----------------------------------------#
+
+Write a method which can calculate square value of number
+
+Hints:
+Using the ** operator
+
+Solution:
+def sqr(n):
+    return n ** 2
+
+
+num = int(input())
+print(sqr(num))
+
+#----------------------------------------#
+Question 7
+#----------------------------------------#
+
+Python has many built-in functions, and if you do not know how to use it, you can read document online or find some books. But Python has a built-in document function for every built-in functions.
+Please write a program to print some Python built-in functions documents, such as abs(), int(), input()
+And add document for your own function
+    
+Hints:
+The built-in document method is __doc__
+
+Solution:
+print(abs.__doc__)
+print(int.__doc__)
+print(input.__doc__)
+
+
+def square(num):
+    """Return the square value of the input number.
+
+    The input number must be integer.
+    """
+    return num ** 2
+
+
+print(square(2))
+print(square.__doc__)
+
+#----------------------------------------#
+Question 8
+#----------------------------------------#
+
+class PersonName:
+    name = 'Person'
+
+    def __init__(self, name):
+        self.name = name
+
+
+person = PersonName("Abhijeet")
+print("%s name is %s." % (PersonName.name, person.name))
+
