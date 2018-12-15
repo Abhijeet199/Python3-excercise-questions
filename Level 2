@@ -277,3 +277,64 @@ for i in range(4):
     ans += t
 
 print(ans)
+
+
+#----------------------------------------#
+Question 11
+#----------------------------------------#
+
+Use list comprehension to square each odd number in a list. The list is input by a sequence of comma-separated numbers.
+Suppose the following input is supplied to the program:
+1, 2, 3, 4, 5, 6, 7, 8, 9
+Then, the output should be:
+1, 9, 25, 49, 81
+
+Hints:
+In case of input data being supplied to the question, it should be assumed to be a console input.
+
+Solution:
+val_list = list(map(int, input().split(",")))
+print(", ".join([str(val**2) for val in val_list if val % 2]))
+
+#----------------------------------------#
+Question 12
+#----------------------------------------#
+
+Write a program that computes the net amount of a bank account based a transaction log from console input. The transaction log format is shown as following:
+D 100
+W 200
+
+D means deposit while W means withdrawal.
+Suppose the following input is supplied to the program:
+D 300
+D 300
+W 200
+D 100
+Then, the output should be:
+500
+
+and
+D 400
+D 300
+W 10000
+Then, the output should be:
+700
+
+Hints:
+In case of input data being supplied to the question, it should be assumed to be a console input.
+
+Solution:
+net_amount = 0
+while True:
+    inp_s = input()
+    if not inp_s:
+        break
+    inp = inp_s.split(" ")
+    if inp[0] is "D":
+        net_amount += eval(inp[1])
+    elif inp[0] is "W":
+        if eval(inp[1]) <= net_amount:
+            net_amount -= eval(inp[1])
+    else:
+        break
+print(net_amount)
