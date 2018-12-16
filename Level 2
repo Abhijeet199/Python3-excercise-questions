@@ -338,3 +338,79 @@ while True:
     else:
         break
 print(net_amount)
+
+#----------------------------------------#
+Question 13
+#----------------------------------------#
+
+Write a program which can filter even numbers in a list by using filter function. The list is: [1,2,3,4,5,6,7,8,9,10].
+
+Hints:
+Use filter() to filter some elements in a list.
+Use lambda to define anonymous functions.
+
+Solution
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_lst = list(filter(lambda n: n % 2 == 0, lst))
+print(even_lst)
+
+#----------------------------------------#
+Question 14
+#----------------------------------------#
+
+Write a program which can map() to make a list whose elements are square of elements in [1,2,3,4,5,6,7,8,9,10].
+
+Hints:
+Use map() to generate a list.
+Use lambda to define anonymous functions.
+
+Solution
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sqr_lst = list(map(lambda n: n ** 2, lst))
+print(sqr_lst)
+
+#----------------------------------------#
+Question 15
+#----------------------------------------#
+
+Write a program which can map() and filter() to make a list whose elements are square of even number in [1,2,3,4,5,6,7,8,9,10].
+
+Hints:
+Use map() to generate a list.
+Use filter() to filter elements of a list.
+Use lambda to define anonymous functions.
+
+Solution
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+new_lst = list(map(lambda n: n**2, filter(lambda m: m % 2 == 0, lst)))
+print(new_lst)
+
+#----------------------------------------#
+Question 16
+#----------------------------------------#
+
+Write a program which can filter() to make a list whose elements are even number between 1 and 20 (both included).
+
+Hints:
+Use filter() to filter elements of a list.
+Use lambda to define anonymous functions.
+
+Solution
+evenNumbers = filter(lambda x: x%2==0, range(1,21))
+print evenNumbers
+
+
+#----------------------------------------#
+Question 17
+#----------------------------------------#
+
+Write a program which can map() to make a list whose elements are square of numbers between 1 and 20 (both included).
+
+Hints:
+
+Use map() to generate a list.
+Use lambda to define anonymous functions.
+
+Solution
+lst = list(map(lambda n: n ** 2, range(1, 21)))
+print(lst)
