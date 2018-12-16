@@ -413,3 +413,101 @@ Use lambda to define anonymous functions.
 Solution
 lst = list(map(lambda n: n ** 2, range(1, 21)))
 print(lst)
+
+
+#----------------------------------------#
+Question 18
+#----------------------------------------#
+
+Define a class named Planet which has a static method called print_name.
+
+Hints:
+
+Use @staticmethod decorator to define class static method.
+
+Solution
+class Planet:
+    @staticmethod
+    def planet_name():
+        print("Earth")
+
+
+my_planet = Planet()
+my_planet.planet_name()
+Planet.planet_name()
+
+#----------------------------------------#
+Question 19
+#----------------------------------------#
+
+Define a class named Father and its subclass Son. 
+
+Hints:
+Use class Subclass(ParentClass) to define a subclass.
+
+Solution:
+class Father:
+    def __init__(self):
+        self.h = "3BHK"
+
+    def home(self):
+        return self.h
+
+
+class Son(Father):
+    pass
+
+
+father = Father()
+son = Son()
+
+print(father.home())
+print(son.home())
+
+#----------------------------------------#
+Question 20
+#----------------------------------------#
+
+Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area. 
+
+Hints:
+Use def methodName(self) to define a method.
+
+Solution:
+from math import pi
+
+
+class Circle:
+    def __init__(self, r):
+        self.radius = r
+
+    def area(self):
+        return self.radius ** 2 * pi
+
+
+radius = eval(input())
+circle = Circle(radius)
+print(circle.area())
+
+#----------------------------------------#
+Question 21
+#----------------------------------------#
+
+Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area. 
+
+Hints:
+Use def methodName(self) to define a method.
+
+Solution:
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+
+l, w = map(int, input().split(","))
+rectangle = Rectangle(l, w)
+print(rectangle.area())
