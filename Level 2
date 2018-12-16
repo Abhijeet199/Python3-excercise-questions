@@ -511,3 +511,31 @@ class Rectangle:
 l, w = map(int, input().split(","))
 rectangle = Rectangle(l, w)
 print(rectangle.area())
+
+
+#----------------------------------------#
+Question 22
+#----------------------------------------#
+
+Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument. Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
+
+Hints:
+To override a method in super class, we can define a method with the same name in the super class.
+
+Solution:
+class Shape:
+    def __init__(self, n):
+        self.n = n
+
+    def area(self):
+        return 0
+
+
+class Square(Shape):
+    def area(self):
+        return self.n ** 2
+
+
+n = eval(input())
+shape = Square(n)
+print(shape.area())
