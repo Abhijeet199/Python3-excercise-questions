@@ -539,3 +539,37 @@ class Square(Shape):
 n = eval(input())
 shape = Square(n)
 print(shape.area())
+
+
+#----------------------------------------#
+Question 23
+#----------------------------------------#
+
+Raise a RuntimeError exception.
+
+Hints:
+Use raise() to raise an exception.
+
+Solution:
+raise RuntimeError("Something went wrong")
+
+#----------------------------------------#
+Question 24
+#----------------------------------------#
+
+Write a function to compute 5/0 and use try/except to catch the exceptions.
+
+Hints:
+Use try/except to catch exceptions.
+
+Solution:
+print("Start")
+try:
+    print(5/0)
+except ZeroDivisionError:
+    print("You can't divide a number by zero.")
+except Exception:
+    print("Something went wrong.")
+print("Finish")
+
+
