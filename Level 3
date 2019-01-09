@@ -243,3 +243,35 @@ import re
 string = input()
 print(re.findall(r"[\d+]", string))
 
+#----------------------------------------#
+Question 9
+#----------------------------------------#
+
+Please write a binary search function which searches an item in a sorted list. The function should return the index of element to be searched in the list.
+
+
+Hints:
+Use if/elif to deal with conditions.
+
+
+Solution:
+def bin_search(lst, n):
+    l = 0
+    u = len(lst) - 1
+
+    while l <= u:
+        mid = (l+u)//2
+        if lst[mid] == n:
+            return mid
+        elif lst[mid] < n:
+            l = mid+1
+        else:
+            u = mid-1
+    return "Not found"
+
+
+my_lst = [1, 2, 3, 88, 109, 889]
+print(bin_search(my_lst, 88))
+print(bin_search(my_lst, 2))
+print(bin_search(my_lst, 11111))
+
