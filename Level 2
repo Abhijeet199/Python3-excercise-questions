@@ -883,3 +883,33 @@ Solution:
 import random
 print(random.randint(7,15))
 
+#----------------------------------------#
+Question 39
+#----------------------------------------#
+
+Please write a program to shuffle and print the list [3,6,7,8].
+
+
+Hints:
+Use shuffle() function to shuffle a list.
+
+Solution:
+import random
+lst = [3, 6, 7, 8]
+random.shuffle(lst)
+print(lst)
+
+#----------------------------------------#
+Question 40
+#----------------------------------------#
+
+Write a program to print the running time of execution of "1+1" for 100 times.
+
+
+Hints:
+Use timeit() function to measure the running time.
+
+Solution:
+from timeit import Timer
+t = Timer("for i in range(100):1+1")
+print(t.timeit())
