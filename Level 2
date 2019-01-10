@@ -35,7 +35,6 @@ Question 2
 #----------------------------------------#
 
 Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array. The element value in the i-th row and j-th column of the array should be i*j.
-Note: i=0,1.., X-1; j=0,1,¡­Y-1.
 Example
 Suppose the following inputs are given to the program:
 3, 5
@@ -913,3 +912,83 @@ Solution:
 from timeit import Timer
 t = Timer("for i in range(100):1+1")
 print(t.timeit())
+
+#----------------------------------------#
+Question 41
+#----------------------------------------#
+
+Please write a program to generate all sentences where subject is in ["I", "You"] and verb is in ["Play", "Love"] and the object is in ["Hockey","Football"].
+Output Should be:
+I play hockey
+I play football
+I love hockey
+I love football
+You play hockey
+You play football
+You love hockey
+You love football
+
+Hints:
+Use list[index] notation to get a element from a list.
+
+Solution:
+sub = ["I", "You"]
+verb = ["play", "love"]
+obj = ["hockey", "football"]
+
+for s in range(2):
+    for v in range(2):
+        for o in range(2):
+            print(sub[s], verb[v], obj[o])
+
+#----------------------------------------#
+Question 42
+#----------------------------------------#
+
+Please write a program to print the list after removing even numbers in [5,6,77,45,22,12,24].
+
+Hints:
+Use list comprehension to delete a bunch of element from a list.
+
+Solution:
+lst = [5, 6, 77, 45, 22, 12, 24]
+print([i for i in lst if i % 2])
+
+#----------------------------------------#
+Question 43
+#----------------------------------------#
+
+By using list comprehension, please write a program to print the list after removing delete numbers which are divisible by 5 and 7 in [12,24,35,70,88,120,155].
+
+Hints:
+Use list comprehension to delete a bunch of element from a list.
+
+Solution:
+lst = [12, 24, 35, 70, 88, 120, 155]
+print([i for i in lst if i % 5 == 0 and i % 7 == 0])
+
+#----------------------------------------#
+Question 44
+#----------------------------------------#
+
+By using list comprehension, please write a program to print the list after removing the 0th, 2nd, 4th,6th numbers in [12,24,35,70,88,120,155].
+
+Hints:
+Use list comprehension to delete a bunch of element from a list.
+Use enumerate() to get (index, value) tuple.
+
+Solution:
+lst = [12, 24, 35, 70, 88, 120, 155]
+print([value for index, value in enumerate(lst) if index % 2])
+
+#----------------------------------------#
+Question 45
+#----------------------------------------#
+
+By using list comprehension, please write a program generate a 3*5*8 3D array whose each element is 0.
+
+Hints:
+Use list comprehension to make an array.
+
+Solution:
+print([[[0 for i in range(3)] for j in range(5)] for k in range(8)])
