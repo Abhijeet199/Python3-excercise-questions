@@ -992,3 +992,130 @@ Use list comprehension to make an array.
 
 Solution:
 print([[[0 for i in range(3)] for j in range(5)] for k in range(8)])
+
+#----------------------------------------#
+Question 46
+#----------------------------------------
+
+By using list comprehension, please write a program to print the list after removing the 0th,4th,5th numbers in [12,24,35,70,88,120,155].
+
+Hints:
+Use list comprehension to delete a bunch of element from a list.
+Use enumerate() to get (index, value) tuple.
+
+Solution:
+lst = [12, 24, 35, 70, 88, 120, 155]
+print([v for i, v in enumerate(lst) if i not in [0, 4, 5]])
+
+#----------------------------------------#
+Question 47
+#----------------------------------------#
+
+By using list comprehension, please write a program to print the list after removing the value 24 in [12,24,35,24,88,120,155].
+
+Hints:
+Use list's remove method to delete a value.
+
+Solution:
+lst = [12, 24, 35, 24, 88, 120, 155]
+while 24 in lst:
+    lst.remove(24)
+print(lst)
+
+#----------------------------------------#
+Question 48
+#----------------------------------------#
+
+With two given set {1,3,6,78,35,55} and {12,24,35,24,88,120,155}, write a program to make a list whose elements are intersection of the above given sets.
+
+Hints:
+Use set() and "&=" or intersection function to do set intersection operation.
+
+Solution:
+# with &=
+set1 = {1, 3, 6, 78, 35, 55}
+set2 = {12, 24, 35, 24, 88, 120, 155}
+set1 &= set2
+print(list(set1))
+
+# with function
+set1 = {1, 3, 6, 78, 35, 55}
+set2 = {12, 24, 35, 24, 88, 120, 155}
+print(list(set1.intersection(set2)))
+
+#----------------------------------------#
+Question 49
+#----------------------------------------#
+
+With a given list [12,24,35,24,88,120,155,88,120,155], write a program to print this list after removing all duplicate values with original order reserved.
+
+Hints:
+Use set() to remove duplicate values.
+
+Solution:
+# with set
+li = [12, 24, 35, 24, 88, 120, 155, 88, 120, 155]
+li = list(set(li))
+print(li)
+
+# wihtout set
+li = [12, 24, 35, 24, 88, 120, 155, 88, 120, 155]
+li2 = []
+for v in li:
+    if v not in li2:
+        li2.append(v)
+print(li2)
+
+#----------------------------------------#
+Question: 50
+#----------------------------------------#
+
+Please write a program which count and print the numbers of each character in a string input by console.
+
+Example:
+If the following string is given as input to the program:
+
+abcdefgabc
+
+Then, the output of the program should be:
+
+a,2
+c,2
+b,2
+e,1
+d,1
+g,1
+f,1
+
+Hints:
+Use dict to store key/value pairs.
+Use dict.get() method to lookup a key with default value.
+
+Solution:
+string = input()
+dic = {}
+for s in string:
+    dic[s] = dic.get(s, 0) + 1
+print("\n".join("%s, %s" % (k, v) for k, v in dic.items()))
+
+#----------------------------------------#
+Question 51
+#----------------------------------------#
+
+Please write a program which accepts a string from console and print it in reverse order.
+
+Example:
+If the following string is given as input to the program:
+
+rise to vote sir
+
+Then, the output of the program should be:
+
+ris etov ot esir
+
+Hints:
+Use [::-1] to iterate a string in a reverse order.
+
+Solution:
+string = input()
+print(string[::-1])
