@@ -1119,3 +1119,63 @@ Use [::-1] to iterate a string in a reverse order.
 Solution:
 string = input()
 print(string[::-1])
+
+
+#----------------------------------------#
+Question 52
+#----------------------------------------#
+
+Please write a program which accepts a string from console and print the characters that have even indexes.
+
+Example:
+If the following string is given as input to the program:
+
+H1e2l3l4o5w6o7r8l9d
+
+Then, the output of the program should be:
+
+Helloworld
+
+Hints:
+Use list[::2] to iterate a list by step 2.
+
+Solution:
+
+s=raw_input()
+s = s[::2]
+print s
+#----------------------------------------#
+Question 53
+#----------------------------------------#
+
+Please write a program which prints all permutations of [1,2,3]
+
+
+Hints:
+Use itertools.permutations() to get permutations of list.
+
+Solution:
+import itertools
+print(list(itertools.permutations([1, 2, 3])))
+
+#----------------------------------------#
+Question 54
+#----------------------------------------#
+
+Write a program to solve a classic ancient Chinese puzzle: 
+We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have?
+
+Hint:
+Use for loop to iterate all possible solutions.
+
+Solution:
+def puzzle(no_of_heads, no_of_legs):
+    for no_of_chicken in range(no_of_heads + 1):
+        no_of_rabbit = no_of_heads - no_of_chicken
+        if no_of_chicken * 2 + no_of_rabbit * 4 == no_of_legs:
+            return no_of_rabbit, no_of_chicken
+    return "No solution"
+
+
+print("(Rabbits, Chickens) :", puzzle(36, 960))
+
